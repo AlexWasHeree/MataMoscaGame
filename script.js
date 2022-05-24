@@ -1,6 +1,7 @@
 var altura = 0
 var largura = 0
 
+
 function ajustaTela() {
     altura = window.innerHeight
     largura = window.innerWidth
@@ -8,11 +9,17 @@ function ajustaTela() {
 
 ajustaTela()
 
+var heart = 1
+
 function randomPosition() {
 
     if(document.getElementById('mosca')){
         document.getElementById('mosca').remove()
+
+        document.getElementById('v' + heart).src='assets/imagens/coracao_vazio.png'
+        heart ++
     }
+
 
     var Xposition = Math.floor(Math.random() * largura - 120)
     var yposition = Math.floor(Math.random() * altura - 120)
@@ -28,6 +35,9 @@ function randomPosition() {
     mosca.style.top = yposition + 'px'
     mosca.style.position = 'absolute'
     mosca.id = 'mosca'
+    mosca.onclick = function() {
+        this.remove()
+    }
 
     document.body.appendChild(mosca)
 }
