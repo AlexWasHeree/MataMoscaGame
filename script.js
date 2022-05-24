@@ -1,7 +1,6 @@
 var altura = 0
 var largura = 0
 
-
 function ajustaTela() {
     altura = window.innerHeight
     largura = window.innerWidth
@@ -23,7 +22,6 @@ function randomPosition() {
             heart++
         }
     }
-
 
     var Xposition = Math.floor(Math.random() * largura - 120)
     var yposition = Math.floor(Math.random() * altura - 120)
