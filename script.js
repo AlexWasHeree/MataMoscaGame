@@ -4,12 +4,16 @@ var largura = 0
 function ajustaTela() {
     altura = window.innerHeight
     largura = window.innerWidth
-    console.log(largura, altura)
 }
 
 ajustaTela()
 
 function randomPosition() {
+
+    if(document.getElementById('mosca')){
+        document.getElementById('mosca').remove()
+    }
+
     var Xposition = Math.floor(Math.random() * largura - 120)
     var yposition = Math.floor(Math.random() * altura - 120)
 
@@ -19,10 +23,11 @@ function randomPosition() {
     //elemento html
     var mosca = document.createElement('img')
     mosca.src = 'assets/imagens/mosca.png'
-    mosca.className = randomSize()
+    mosca.className = randomSize() + ' ' + randomSide()
     mosca.style.left = Xposition + 'px'
     mosca.style.top = yposition + 'px'
     mosca.style.position = 'absolute'
+    mosca.id = 'mosca'
 
     document.body.appendChild(mosca)
 }
@@ -30,7 +35,7 @@ function randomPosition() {
 function randomSize() {
     var classe = Math.floor(Math.random() * 3)
 
-    switch(classe) {
+    switch (classe) {
         case 0:
             return 'mosca1'
 
@@ -39,6 +44,19 @@ function randomSize() {
 
         case 2:
             return 'mosca3'
+    }
+}
+
+function randomSide() {
+    var classe = Math.floor(Math.random() * 2)
+
+    switch (classe) {
+        case 0:
+            return 'sideA'
+
+        case 1:
+            return 'sideB'
+
     }
 }
 
