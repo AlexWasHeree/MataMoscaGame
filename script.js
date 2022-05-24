@@ -13,11 +13,15 @@ var heart = 1
 
 function randomPosition() {
 
-    if(document.getElementById('mosca')){
+    if (document.getElementById('mosca')) {
         document.getElementById('mosca').remove()
 
-        document.getElementById('v' + heart).src='assets/imagens/coracao_vazio.png'
-        heart ++
+        if (heart >= 3) {
+            window.location.href = 'endgame.html'
+        } else {
+            document.getElementById('v' + heart).src = 'assets/imagens/coracao_vazio.png'
+            heart++
+        }
     }
 
 
@@ -35,7 +39,7 @@ function randomPosition() {
     mosca.style.top = yposition + 'px'
     mosca.style.position = 'absolute'
     mosca.id = 'mosca'
-    mosca.onclick = function() {
+    mosca.onclick = function () {
         this.remove()
     }
 
