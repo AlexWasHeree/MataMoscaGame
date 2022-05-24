@@ -19,11 +19,26 @@ function randomPosition() {
     //elemento html
     var mosca = document.createElement('img')
     mosca.src = 'assets/imagens/mosca.png'
-    mosca.className = 'mosca1'
+    mosca.className = randomSize()
     mosca.style.left = Xposition + 'px'
     mosca.style.top = yposition + 'px'
     mosca.style.position = 'absolute'
 
     document.body.appendChild(mosca)
+}
+
+function randomSize() {
+    var classe = Math.floor(Math.random() * 3)
+
+    switch(classe) {
+        case 0:
+            return 'mosca1'
+
+        case 1:
+            return 'mosca2'
+
+        case 2:
+            return 'mosca3'
+    }
 }
 
