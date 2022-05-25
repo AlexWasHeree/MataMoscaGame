@@ -11,18 +11,15 @@ function ajustaTela() {
 ajustaTela()
 
 var cronometro = setInterval(function () {
-
     time -= 1
 
     if (time < 0) {
-        alert('vitoria')
-
+        clearInterval(cronometro)
+        clearInterval(criaMosca)
+        window.location.href = 'win.html'
     } else {
         document.getElementById('cronometro').innerHTML = time
     }
-
-
-
 }, 1000)
 
 function randomPosition() {
