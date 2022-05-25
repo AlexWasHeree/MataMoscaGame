@@ -1,5 +1,7 @@
 var altura = 0
 var largura = 0
+var heart = 1
+var time = 10
 
 function ajustaTela() {
     altura = window.innerHeight
@@ -8,7 +10,20 @@ function ajustaTela() {
 
 ajustaTela()
 
-var heart = 1
+var cronometro = setInterval(function () {
+
+    time -= 1
+
+    if (time < 0) {
+        alert('vitoria')
+
+    } else {
+        document.getElementById('cronometro').innerHTML = time
+    }
+
+
+
+}, 1000)
 
 function randomPosition() {
 

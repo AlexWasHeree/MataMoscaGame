@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
+<head>
 
-        <title></title>
+    <title></title>
 
-        <link rel="stylesheet" href="styles.css">
-        <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 
-    </head>
+</head>
 
-    <body onresize="ajustaTela()">
+<body onresize="ajustaTela()">
 
-        <div class="painel">
-            <div class="hp">
-                <img id='v1' src="assets/imagens/coracao_cheio.png">
-                <img id='v2' src="assets/imagens/coracao_cheio.png">
-                <img id='v3' src="assets/imagens/coracao_cheio.png">
-            </div>
-            <div class="time">
-                Time: ----
-            </div>
+    <div class="painel">
+        <div class="hp">
+            <img id='v1' src="assets/imagens/coracao_cheio.png">
+            <img id='v2' src="assets/imagens/coracao_cheio.png">
+            <img id='v3' src="assets/imagens/coracao_cheio.png">
         </div>
+        <div class="time">
+            Time: <span id="cronometro"></span>
+        </div>
+    </div>
 
-        <script>
+    <script>
 
-            setInterval(function () {
-                randomPosition()
-            }, 1000)
+        document.getElementById('cronometro').innerHTML = time
 
-        </script>
+        setInterval(function () {
+            randomPosition()
+        }, 1000)
 
-    </body>
+    </script>
+
+</body>
 
 </html>
