@@ -2,6 +2,19 @@ var altura = 0
 var largura = 0
 var heart = 1
 var time = 10
+var criaMoscaTempo = 1500
+
+var nivel = window.location.search.replace('?', '')
+
+if(nivel === 'facil'){
+    criaMoscaTempo = 1500
+}
+if(nivel === 'normal'){
+    criaMoscaTempo = 1000
+}
+if(nivel === 'dificil'){
+    criaMoscaTempo = 750
+}
 
 function ajustaTela() {
     altura = window.innerHeight
